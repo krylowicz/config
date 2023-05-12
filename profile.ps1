@@ -10,6 +10,14 @@ $WslDefaultParameterValues = @{}
 $WslDefaultParameterValues["grep"] = "-E"
 $WslDefaultParameterValues["ls"] = "-AFh --group-directories-first" 
 
+function global:Format-WslArgument([string]$arg, [bool]$interactive) {
+    if ($interactive -and $arg.Contains(" ")) {
+        return "'$arg'"
+    } else {
+        return ($arg -replace " ", "\ ") -replace "([()|])", ('\$1', '`$1')[$interactive]
+    }
+}
+
 $commands | ForEach-Object { Invoke-Expression @"
 Remove-Item -Path Alias\$_ -Force -ErrorAction Ignore
 function global:$_() {
