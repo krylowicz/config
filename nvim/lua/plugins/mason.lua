@@ -9,12 +9,12 @@ return {
         mason.setup()
 
         mason_lspconfig.setup({
-            ensure_installed = {"html", "cssls", "tailwindcss", "lua_ls", "rust_analyzer", "sqlls", "pyright"},
+            ensure_installed = {"html", "cssls", "tailwindcss", "lua_ls", "rust_analyzer", "sqlls", "pyright", "ruff_lsp"},
             automatic_installation = true
         })
 
         mason_tool_installer.setup({
-            ensure_installed = {"pyright", "ruff", "mypy"}
+            ensure_installed = {"pyright", "mypy"}
         })
     end
 }
