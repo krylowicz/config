@@ -1,11 +1,9 @@
 return {
-    "ellisonleao/gruvbox.nvim",
+    "eddyekofo94/gruvbox-flat.nvim",
     config = function()
-        require("gruvbox").setup({
-            italic = {
-                strings = false,
-            },
-        })
+        vim.o.background = "dark"
+        vim.g.gruvbox_flat_style = "dark"
+        vim.cmd[[colorscheme gruvbox-flat]]
     end
 }
 
