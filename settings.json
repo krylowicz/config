@@ -72,6 +72,29 @@
     "schemes": 
     [
         {
+            "background": "#282828",
+            "black": "#282828",
+            "blue": "#7DAEA3",
+            "brightBlack": "#17191A",
+            "brightBlue": "#7DAEA3",
+            "brightCyan": "#89B482",
+            "brightGreen": "#A9B665",
+            "brightPurple": "#D3869B",
+            "brightRed": "#EA6962",
+            "brightWhite": "#D4BE98",
+            "brightYellow": "#D8A657",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#89B482",
+            "foreground": "#D4BE98",
+            "green": "#A9B665",
+            "name": "Gruvbox Alacritty",
+            "purple": "#D3869B",
+            "red": "#EA6962",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D4BE98",
+            "yellow": "#D8A657"
+        },
+        {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
             "blue": "#0037DA",
