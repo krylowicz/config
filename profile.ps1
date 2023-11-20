@@ -55,3 +55,5 @@ Set-Alias -Name "gp" -Value get-gitpush -Force -Option AllScope
 Set-Alias -Name "gs" -Value get-gitstatus -Force -Option AllScope
 Set-Alias -Name "gd" -Value get-gitdiff -Force -Option AllScope
 Set-Alias -Name "gb" -Value get-gitbranch -Force -Option AllScope
+Set-Alias -Name "open" -Value explorer -Force -Option AllScope
+
