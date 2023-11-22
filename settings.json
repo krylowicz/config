@@ -47,16 +47,17 @@
         "list": 
         [
             {
-                "colorScheme": "Gruvbox Alacritty",
+                "colorScheme": "KanagawaDragon",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "font": 
                 {
                     "face": "CaskaydiaCove Nerd Font Mono",
-                    "size": 10.0,
-                    "features": {
-                        "liga": 0,
-                        "calt": 0
-                    }
+                    "features": 
+                    {
+                        "calt": 0,
+                        "liga": 0
+                    },
+                    "size": 10.0
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
