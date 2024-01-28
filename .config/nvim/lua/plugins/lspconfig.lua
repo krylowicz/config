@@ -74,64 +74,41 @@ return {
             })
         end
 
-        lspconfig["html"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-        })
-
-        lspconfig["cssls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-        })
-
-        lspconfig["tailwindcss"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-        })
-
-        lspconfig["rust_analyzer"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-        })
-
-        lspconfig["ruff_lsp"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-        })
-
-        lspconfig["pyright"].setup({
-            capabilities = capabilities,
+        lspconfig.rust_analyzer.setup {
             on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                ["rust-analyzer"] = {
+                    cargo = {
+                        allFeatures = true,
+                    },
+                    imports = {
+                        group = {
+                            enable = false,
+                        },
+                    },
+                    completion = {
+                        postfix = {
+                            enable = false,
+                        },
+                    },
+                },
+            },
+        }
+
+        lspconfig.pyright.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
             settings = {
                 python = {
                     analysis = {
-                        typeCheckingMode = "off"
-                    }
-                }
-            }
-        })
-
-        lspconfig["sqlls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-        })
-
-        lspconfig["lua_ls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = {"vim"}
+                        autoSearchPaths = true,
+                        useLibraryCodeForTypes = true,
+                        typeCheckingMode = "off",
                     },
-                    workspace = {
-                        library = {
-                            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                            [vim.fn.stdpath("config") .. "/lua"] = true
-                        }
-                    }
-                }
-            }
-        })
+                },
+            },
+        }
+
     end
 }

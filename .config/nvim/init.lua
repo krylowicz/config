@@ -6,4 +6,3 @@ vim.cmd([[
     autocmd VimEnter * :silent! Explore
     augroup END
 ]])
-
