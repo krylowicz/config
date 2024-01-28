@@ -14,7 +14,7 @@ return {
         })
 
         mason_tool_installer.setup({
-            ensure_installed = {"pyright"}
+            ensure_installed = {"pyright", "mypy"}
         })
     end
 }
