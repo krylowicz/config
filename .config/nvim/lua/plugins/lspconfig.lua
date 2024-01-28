@@ -67,6 +67,7 @@ return {
         }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
+
             vim.fn.sign_define(hl, {
                 text = icon,
                 texthl = hl,
@@ -98,13 +99,19 @@ return {
 
         lspconfig.pyright.setup {
             on_attach = on_attach,
-            capabilities = capabilities,
+            capabilities = (function()
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+
+                return capabilities
+            end)(),
             settings = {
                 python = {
                     analysis = {
                         autoSearchPaths = true,
                         useLibraryCodeForTypes = true,
                         typeCheckingMode = "off",
+                        diagnosticMode = "off",
                     },
                 },
             },
