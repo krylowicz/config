@@ -1,7 +1,8 @@
 return {
     'itchyny/lightline.vim',
-    lazy = false, 
+    lazy = false, -- also load at start since it's UI
     config = function()
+        -- no need to also show mode in cmd line when we have bar
         vim.o.showmode = false
         vim.g.lightline = {
             active = {

@@ -9,7 +9,7 @@ return {
         mason.setup()
 
         mason_lspconfig.setup({
-            ensure_installed = {"pyright"},
+            ensure_installed = {"pyright", "ruff_lsp"},
             automatic_installation = true
         })
 
