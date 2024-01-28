@@ -23,7 +23,7 @@ function fish_prompt
 	set_color green
 	printf '%s ' (__fish_git_prompt)
 	set_color red
-	echo -n '| '
+	echo -n ':: '
 	set_color normal
 end
 
@@ -32,7 +32,7 @@ end
 alias python "python3"
 alias cls "clear"
 
-alias ls "ls -la"
+alias ls "eza --all --group --header --group-directories-first --long"
 
 alias gl "git log"
 alias ga "git add"
