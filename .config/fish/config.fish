@@ -39,6 +39,7 @@ alias ga "git add"
 alias gm "git commit"
 alias gp "git push"
 alias gs "git status"
+alias gsw "git switch"
 alias gd "git diff"
 alias gb "git branch"
 
