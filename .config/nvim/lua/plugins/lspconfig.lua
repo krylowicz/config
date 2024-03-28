@@ -75,8 +75,11 @@ return {
             })
         end
 
-        lspconfig.rust_analyzer.setup {
-            on_attach = on_attach,
+       lspconfig.rust_analyzer.setup {
+            on_attach = function(client, bufnr)
+                on_attach(client, bufnr)
+                client.server_capabilities.semanticTokensProvider = nil
+            end,
             capabilities = capabilities,
             settings = {
                 ["rust-analyzer"] = {
@@ -94,7 +97,7 @@ return {
                         },
                     },
                 },
-            },
+            }
         }
 
         lspconfig.pyright.setup {
